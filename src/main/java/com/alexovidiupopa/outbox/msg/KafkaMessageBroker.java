@@ -17,6 +17,6 @@ public class KafkaMessageBroker implements MessageBroker {
     @Override
     public void publish(String topic, String message) {
         //kafkaTemplate.send(topic, message); < - we would do actual sends here
-        log.atInfo().log(String.format("Sending %s on topic %s", message, topic));
+        log.info("Sending {} on topic {}", message, topic);
     }
 }

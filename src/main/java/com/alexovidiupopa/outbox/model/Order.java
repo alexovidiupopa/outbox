@@ -3,6 +3,8 @@ package com.alexovidiupopa.outbox.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.time.Instant;
+
 @Entity
 @Data
 public class Order {
@@ -10,9 +12,10 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "customer_id")
     private Long customerId;
     private String status;
 
-    @Column(updatable = false)
-    private java.time.Instant createdAt = java.time.Instant.now();
+//    @Column(name = "created_at")
+//    private Instant createdAt;
 }

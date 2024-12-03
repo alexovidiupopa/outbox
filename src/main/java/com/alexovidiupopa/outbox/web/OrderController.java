@@ -19,7 +19,7 @@ public class OrderController {
     }
 
     @PostMapping
-    public ResponseEntity<String> createOrder(@RequestParam Long customerId) {
+    public ResponseEntity<String> createOrder(@RequestParam(name = "customerId") Long customerId) {
         try {
             orderService.placeOrder(customerId);
             return new ResponseEntity<>("Order created successfully!", HttpStatus.CREATED);
